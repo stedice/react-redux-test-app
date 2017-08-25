@@ -1,9 +1,12 @@
 // Set up your root reducer here...
 import { combineReducers } from 'redux';
-import users from './userReducers';
+import userReducers from './userReducers';
+import allUsers from './users';
+
 
 export default combineReducers({
-  users: users,
+  userReducers: userReducers,
+  allUsers: allUsers,
   // More reducers if there are
   // can go here
 });
