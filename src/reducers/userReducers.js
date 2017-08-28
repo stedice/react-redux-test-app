@@ -61,11 +61,25 @@ export default (state = initialState, action) => {
         else 
           return user;
       });
-    case 'CREATE_USER':
-      return [
-        ...state, 
-        Object.assign({}, action.payload)
-        ];
+    case 'CREATE_USER': {
+      const newUser = action.payload;
+      if (newUser && newUser.name) {
+        const lastUser = state.slice(-1)[0];
+        newUser.id = (lastUser && lastUser.id) ? (lastUser.id + 1) : 1; 
+        newUser.groups=[];
+        return [
+          ...state, 
+          Object.assign({}, newUser)
+          ];
+      }
+      else return state;
+
+    }
+    case 'REMOVE_USER': {
+      return state.filter((user) => { 
+        return !user.selected;
+      });
+    }
     default:
       return state;
   }

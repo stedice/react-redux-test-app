@@ -22,4 +22,10 @@ export const createUser = (user) => {
   };
 };
 
+export const removeUser = (user) => {
+  return {
+    type: 'REMOVE_USER',
+    payload: user
+  };
+};
 

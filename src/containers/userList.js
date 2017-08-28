@@ -2,20 +2,20 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {selectUser, toggleUserGroup, createUser} from '../actions/userActions';
+import {selectUser, toggleUserGroup, createUser, removeUser} from '../actions/userActions';
 
 
 class UserList extends Component {
     
     renderUserList() {
         return this.props.users.map((user) => {
-            //const listClassName = "list-group-item list-group-item-action" + ((this.props.userReducers.id===user.id) ? " active":"");
             const listClassName = "list-group-item list-group-item-action" + (user.selected ? " active":"");
               return (
                 <a href="#" key={user.id}
                    onClick={() => this.props.selectUser(user)}
-                   className={listClassName}>
-                   {user.name} <span className="badge">{user.groups.length || ''}</span>
+                   className={listClassName}>                   
+                   {user.name} 
+                   <span className="badge badge-pill badge-default">{user.groups.length || ''}</span>
                 </a>
             );
         });
@@ -24,7 +24,6 @@ class UserList extends Component {
     renderGroupList() {
         const activeUser = this.props.users.find((x)=>  x.selected) || {};
         return this.props.groups.map((group) => {
-            //const activeGroups = this.props.users.groups || [];
             const activeGroups = activeUser.groups || [];
             const listClassName = "list-group-item list-group-item-action" + ((activeGroups.includes(group.id)) ? " active":"");
               return (
@@ -38,17 +37,37 @@ class UserList extends Component {
     }
 
     render() {
+        let userInput;
         return (
-            <div className="row">
-                <div className="list-group col col-sm-6">
-                    <h3>Users:</h3>
-                    {this.renderUserList()}
-                </div>
-                <div className="list-group col col-sm-6">
-                    <h3>Groups:</h3>
-                    {this.renderGroupList()}
-                </div>
-                <button onClick={() => this.props.createUser({name:'ciao', id:9})}>create user</button>
+            <div>
+                <div className="row">
+                    <div className="list-group col col-sm-6">
+                        <h3>Users:</h3>
+                        {this.renderUserList()}
+                    </div>
+                    <div className="list-group col col-sm-6">
+                        <h3>Groups:</h3>
+                        {this.renderGroupList()}
+                    </div>
+
+                </div>                
+                <form className="form-inline row" 
+                      onSubmit={ e => {
+                        e.preventDefault();
+                        var input = {name: userInput.value};
+                        this.props.createUser(input);
+                        e.target.reset();
+                    }}>
+                    <input type="text" id="inputNewUser"
+                           name="newUser" className="form-control" 
+                           placeholder="Enter new user"
+                           ref={node => userInput = node} />
+                    <button type="submit" className="btn btn-primary">
+                            create user </button>
+                    <button type="button" className="btn btn-danger"
+                            onClick={() => this.props.removeUser()}>
+                            remove user </button>
+                </form>
             </div>
 
         );
@@ -65,7 +84,9 @@ UserList.propTypes = {
     ]),
     groups: PropTypes.array,
     selectUser: PropTypes.func,
-    toggleGroup: PropTypes.func
+    toggleGroup: PropTypes.func,
+    createUser: PropTypes.func,
+    removeUser: PropTypes.func
 };
 
 // Get apps state and pass it as props to UserList
@@ -74,7 +95,7 @@ function mapStateToProps(state) {
     return {
         //allUsers: state.allUsers,
         users: state.userReducers,
-        groups: state.allGroups
+        groups: state.groupReducers
     };
 }
 
@@ -85,6 +106,7 @@ function mapDispatchToProps(dispatch){
         selectUser: selectUser,
         toggleGroup: toggleUserGroup,
         createUser: createUser,
+        removeUser: removeUser,
         }, dispatch);
 }
 

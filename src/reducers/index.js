@@ -2,11 +2,10 @@
 import { combineReducers } from 'redux';
 import userReducers from './userReducers';
 //import allUsers from './users';
-import allGroups from './groups';
+import groupReducers from './groupReducers';
 
 export default combineReducers({
-  //allUsers: allUsers,
-  allGroups: allGroups,
+  groupReducers: groupReducers,
   userReducers: userReducers,
   // More reducers if there are
   // can go here
