@@ -5,11 +5,11 @@ export const selectUser = (user) => {
   };
 };
 
-export const toggleUserGroup = (activeUser, group) => {
+export const toggleUserGroup = (user, group) => {
   return {
     type: 'TOGGLE_USER_GROUP',
     payload: {
-      activeUser: activeUser,
+      user: user,
       group:group
     }
   };

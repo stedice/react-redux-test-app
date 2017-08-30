@@ -51,9 +51,9 @@ export default (state = initialState, action) => {
       });
     case 'TOGGLE_USER_GROUP':
       return state.map((user) => {
-        if (user.id === action.payload.activeUser.id){
+        if (user.id === action.payload.user.id){
           const groupId = action.payload.group.id;
-          const i = action.payload.activeUser.groups.indexOf(groupId);
+          const i = action.payload.user.groups.indexOf(groupId);
           return (i === -1) ? 
                     update(user, {groups: {$push: [groupId]}}): 
                     update(user, {groups: {$splice: [[i,1]]}});
@@ -66,7 +66,7 @@ export default (state = initialState, action) => {
       if (newUser && newUser.name) {
         const lastUser = state.slice(-1)[0];
         newUser.id = (lastUser && lastUser.id) ? (lastUser.id + 1) : 1; 
-        newUser.groups=[];
+        newUser.groups=[];    //new Users have no groups
         return [
           ...state, 
           Object.assign({}, newUser)

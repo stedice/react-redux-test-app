@@ -1,5 +1,6 @@
 import React  from 'react';
 import {Link} from 'react-router';
+import PropTypes from 'prop-types';
 
 const App = (props) => {
   return (
@@ -23,6 +24,10 @@ const App = (props) => {
       {props.children}
     </div>
   );
+};
+
+App.propTypes = {
+  children: PropTypes.object,
 };
 
 export default App;

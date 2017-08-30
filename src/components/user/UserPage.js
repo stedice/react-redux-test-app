@@ -1,11 +1,14 @@
 import React from 'react';
-import UserList from '../../containers/userList';
+import UserDetails from '../../containers/userDetails';
+import UserForm from '../../containers/userForm';
+
 
 const User = () => {
   return (
     <div>
       <h1>User Page</h1>
-      <UserList />
+      <UserDetails/>
+      <UserForm />
     </div>
   );
 };
