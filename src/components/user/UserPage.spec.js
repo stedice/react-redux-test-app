@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import UserPage from './UserPage';
 
 describe('<UserPage />', () => {
-  it('should have a header called \'Groups\'', () => {
+  it('should have a header called \'User Detail Page\'', () => {
     const wrapper = shallow(<UserPage />);
     const actual = wrapper.find('h1').text();
     const expected = 'User Detail Page';

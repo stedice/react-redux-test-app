@@ -1,5 +1,5 @@
 import React from 'react';
-import GroupDetails from '../../containers/group/groupDetails';
+import GroupDetails from './groupDetails';
 import GroupForm from '../../containers/group/groupForm';
 
 

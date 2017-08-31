@@ -1,5 +1,5 @@
 import React from 'react';
-import UserDetails from '../../containers/user/userDetails';
+import UserDetails from './userDetails';
 import UserForm from '../../containers/user/userForm';
 
 
