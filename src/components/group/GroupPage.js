@@ -1,12 +1,12 @@
 import React from 'react';
 import GroupDetails from '../../containers/group/groupDetails';
-import GroupForm from '../../containers//group/groupForm';
+import GroupForm from '../../containers/group/groupForm';
 
 
 const Group = () => {
   return (
     <div>
-      <h1>Group Page</h1>
+      <h1 className="alt-header">Group Detail Page</h1>
       <GroupDetails/>
       <GroupForm />
     </div>

@@ -6,7 +6,7 @@ import UserForm from '../../containers/user/userForm';
 const User = () => {
   return (
     <div>
-      <h1>User Page</h1>
+      <h1 className="alt-header">User Detail Page</h1>
       <UserDetails/>
       <UserForm />
     </div>
