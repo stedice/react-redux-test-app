@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectUser, toggleUserGroup } from '../actions/userActions';
-import { selectGroup } from '../actions/groupActions';
+import { toggleUserGroup } from '../../actions/userActions';
+import { selectGroup } from '../../actions/groupActions';
 
 
 class GroupDetails extends Component {
@@ -85,7 +85,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     selectGroup: selectGroup,
-    selectUser: selectUser,
     toggleGroup: toggleUserGroup,
   }, dispatch);
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import UserDetails from '../../containers/userDetails';
-import UserForm from '../../containers/userForm';
+import UserDetails from '../../containers/user/userDetails';
+import UserForm from '../../containers/user/userForm';
 
 
 const User = () => {

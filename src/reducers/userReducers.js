@@ -1,4 +1,11 @@
 import update from 'react-addons-update';
+import { USER_SELECTED, 
+         TOGGLE_USER_GROUP, 
+         CREATE_USER, 
+         REMOVE_USER, 
+         //SET_VISIBILITY_FILTER, 
+         //VisibilityFilters 
+       } from '../constants/';
 
 const initialState = [
   {
@@ -45,11 +52,11 @@ const initialState = [
 
 export default (state = initialState, action) => {  
   switch (action.type){
-    case 'USER_SELECTED':
+    case USER_SELECTED:
       return state.map((user) => {
         return Object.assign({}, user, { selected: (user.id === action.payload.id) }); 
       });
-    case 'TOGGLE_USER_GROUP':
+    case TOGGLE_USER_GROUP:
       return state.map((user) => {
         if (user.id === action.payload.user.id){
           const groupId = action.payload.group.id;
@@ -61,7 +68,7 @@ export default (state = initialState, action) => {
         else 
           return user;
       });
-    case 'CREATE_USER': {
+    case CREATE_USER: {
       const newUser = action.payload;
       if (newUser && newUser.name) {
         const lastUser = state.slice(-1)[0];
@@ -75,7 +82,7 @@ export default (state = initialState, action) => {
       else return state;
 
     }
-    case 'REMOVE_USER': {
+    case REMOVE_USER: {
       return state.filter((user) => { 
         return !user.selected;
       });

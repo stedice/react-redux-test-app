@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectUser, toggleUserGroup } from '../actions/userActions';
+import { selectUser, toggleUserGroup } from '../../actions/userActions';
 
 
 class UserDetails extends Component {

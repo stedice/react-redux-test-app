@@ -1,6 +1,6 @@
 import React from 'react';
-import GroupDetails from '../../containers/groupDetails';
-import UserForm from '../../containers/userForm';
+import GroupDetails from '../../containers/group/groupDetails';
+import GroupForm from '../../containers//group/groupForm';
 
 
 const Group = () => {
@@ -8,7 +8,7 @@ const Group = () => {
     <div>
       <h1>Group Page</h1>
       <GroupDetails/>
-      <UserForm />
+      <GroupForm />
     </div>
   );
 };
