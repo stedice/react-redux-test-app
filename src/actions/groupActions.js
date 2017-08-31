@@ -1,7 +1,5 @@
 import { GROUP_SELECTED, CREATE_GROUP, REMOVE_GROUP } from '../constants/';
 
-
-
 export const selectGroup = (group) => {
   return {
     type: GROUP_SELECTED,

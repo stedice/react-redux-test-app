@@ -2,8 +2,8 @@ import { USER_SELECTED,
          TOGGLE_USER_GROUP, 
          CREATE_USER, 
          REMOVE_USER, 
-         //SET_VISIBILITY_FILTER, 
-         //VisibilityFilters 
+         // SET_VISIBILITY_FILTER, 
+         // VisibilityFilters 
        } from '../constants/';
 
 
@@ -19,7 +19,7 @@ export const toggleUserGroup = (user, group) => {
     type: TOGGLE_USER_GROUP,
     payload: {
       user: user,
-      group:group
+      group: group
     }
   };
 };

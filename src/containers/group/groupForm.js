@@ -10,7 +10,7 @@ class GroupForm extends Component {
   render() {
     let userInput;
     const activeGroup = this.props.groups.find((x) => x.selected);
-    const groupEmpty = usersInGroup (this.props.users, activeGroup) === 0;
+    const groupEmpty = usersInGroup(this.props.users, activeGroup) === 0;
     return (
       <form className="form-inline row" 
           onSubmit ={(e) => {
@@ -42,7 +42,7 @@ GroupForm.propTypes = {
   removeGroup: PropTypes.func
 };
 
-const usersInGroup = (users=[], group={}) => {
+const usersInGroup = (users = [], group = {}) => {
   // if (!users || !group){
   //   return 0;
   // }

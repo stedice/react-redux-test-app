@@ -31,13 +31,15 @@ export default (state = initialState, action) => {
           Object.assign({}, newGroup)
           ];
       }
-      else return state;
+      break;
     }
     case REMOVE_GROUP: {
       return state.filter((group) => { 
         return !group.selected;
       });
     }
-    default: return state;
+    default: 
+      return state;
   }
+  return state;
 };

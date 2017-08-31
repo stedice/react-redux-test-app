@@ -9,7 +9,7 @@ class UserForm extends Component {
 
   render() {
     let userInput;
-    const activeUser = this.props.users.find((x) => x.selected) ;
+    const activeUser = this.props.users.find((x) => x.selected);
     return (
       <form className="form-inline row" 
           onSubmit ={(e) => {
