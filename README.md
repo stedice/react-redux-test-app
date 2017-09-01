@@ -16,7 +16,7 @@ In order to make a server-side API I suggest you to start creating the following
 * `POST /user` to create a new user,
 * `DELETE /user/{id}` to remove a user,
 
-* `GET /groups' to retrieve all the groups,
+* `GET /groups` to retrieve all the groups,
 * `POST /group` to create a new group,
 * `DELETE /group/{id}` to remove a group
 
