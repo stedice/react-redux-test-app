@@ -12,13 +12,13 @@ This will run the automated build process, start up a webserver, and open the ap
 The app provides dummy initial data inside the reducers and it doesn't requires any APIs.
 In order to make a server-side API I suggest you to start creating the following endpoints that the app may consume:
 
-`GET /users` to retrieve all the users
-`POST /user` to create a new user
-`DELETE /user/{id}` to remove a user
+`GET /users` to retrieve all the users,  
+`POST /user` to create a new user,  
+`DELETE /user/{id}` to remove a user,  
 
-`GET /groups' to retrieve all the groups
-`POST /group` to create a new group
-`DELETE /group/{id}` to remove a group
+`GET /groups' to retrieve all the groups,  
+`POST /group` to create a new group,  
+`DELETE /group/{id}` to remove a group  
 
 ## Initial Machine Setup
 1. **Install [Node 4.0.0 or greater](https://nodejs.org)** - (5.0 or greater is recommended for optimal build performance). Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
