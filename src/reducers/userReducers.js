@@ -10,42 +10,42 @@ import { USER_SELECTED,
 const initialState = [
   {
     id: 1,
-    name: 'Homer',
+    name: 'Homeros',
     groups: [1],
   },
   {
     id: 2,
-    name: 'Marge',
+    name: 'Marjorie',
     groups: [1]
   },
   {
     id: 3,
-    name: 'Bart',
+    name: 'Bartholomew',
     groups: [1, 3]
   },
   {
     id: 4,
-    name: 'Lisa',
+    name: 'Elizabeth',
     groups: [1, 3]
   },
   {
     id: 5,
-    name: 'Maggie',
+    name: 'Margaret',
     groups: [1]
   },
   {
     id: 6,
-    name: 'Snowball II',
+    name: 'Snowflake II',
     groups: [1, 2]
   },
   {
     id: 7,
-    name: 'Santa\'s Little Helper',
+    name: 'Santa\'s Great Helper',
     groups: [1, 2]
   },
   {
     id: 8,
-    name: 'Milhouse',
+    name: 'Milhous',
     groups: [3]
   }
 ];
