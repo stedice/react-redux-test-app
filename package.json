@@ -34,7 +34,7 @@
     "fstream": "1.0.12",
     "handlebars": "4.5.3",
     "js-yaml": "3.13.1",
-    "merge": "1.2.1",
+    "merge": "2.1.1",
     "object-assign": "4.1.1",
     "react": "16.8.6",
     "react-addons-update": "15.6.2",
