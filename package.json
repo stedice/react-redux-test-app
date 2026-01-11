@@ -33,7 +33,7 @@
     "bootstrap": "5.0.0",
     "fstream": "1.0.12",
     "handlebars": "4.7.7",
-    "js-yaml": "3.13.1",
+    "js-yaml": "4.1.1",
     "merge": "2.1.1",
     "object-assign": "4.1.1",
     "react": "16.8.6",
