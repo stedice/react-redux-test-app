@@ -44,7 +44,7 @@
     "react-router-redux": "4.0.8",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
-    "tar": "7.5.8"
+    "tar": "7.5.10"
   },
   "devDependencies": {
     "autoprefixer": "10.4.16",
